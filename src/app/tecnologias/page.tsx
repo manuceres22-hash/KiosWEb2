@@ -26,7 +26,7 @@ export default function Tecnologias() {
       <Contenedor className="mt-8">
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TECNOLOGIAS.map((t) => (
-            <li key={t.id} id={t.id} className="scroll-mt-28 rounded-tarjeta bg-blanco p-6 shadow-tarjeta sm:p-8">
+            <li key={t.id} id={t.id} className="scroll-mt-28 rounded-tarjeta bg-blanco p-6 borde-fino sm:p-8">
               <Icono d={t.icono} />
               <h2 className="mt-4 text-2xl font-bold">{t.titulo}</h2>
               <p className="mt-2 text-lg leading-relaxed">{t.texto}</p>

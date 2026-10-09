@@ -8,7 +8,7 @@ export function Pie() {
     <footer className="mt-24 border-t border-niebla bg-hielo px-4 pb-10 pt-14">
       <div className="mx-auto grid max-w-pagina gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div className="text-marino">
-          <Logo grande />
+          <Logo className="h-9" />
           <p className="mt-4 max-w-xs text-grafito">
             Tecnología educativa para aprender haciendo: robots, plataforma, capacitación docente y más.
           </p>

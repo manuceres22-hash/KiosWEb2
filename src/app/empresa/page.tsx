@@ -49,7 +49,7 @@ export default function Empresa() {
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {SOLUCIONES.map((s) => (
               <li key={s.id}>
-                <Link href={s.href} className="block h-full rounded-tarjeta bg-blanco p-6 shadow-tarjeta transition-transform hover:-translate-y-1">
+                <Link href={s.href} className="block h-full rounded-tarjeta bg-blanco p-6 borde-fino levitar">
                   <h3 className="text-xl font-bold">{s.titulo}</h3>
                   <p className="mt-2 leading-relaxed">{s.bajada}</p>
                   <p className="mt-3 font-medium text-naranja-texto">Conocé más →</p>

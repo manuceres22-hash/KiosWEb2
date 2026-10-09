@@ -14,7 +14,7 @@ export default function Capacitacion() {
       <CabeceraDePagina
         titulo="Capacitación docente"
         bajada="Para dar clases de robótica y programación no hace falta ser ingeniero. Formamos a los docentes con los mismos robots y las mismas clases que después van a dar."
-        icono="M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5M22 9v6"
+        foto={{ src: "/robots/detalle-sensor.webp", ancho: 396, alto: 420 }}
       >
         <BotonLanzar href="/contacto/?motivo=capacitacion">Quiero capacitar a mi equipo</BotonLanzar>
       </CabeceraDePagina>
@@ -50,7 +50,7 @@ export default function Capacitacion() {
           />
           <ol className="mx-auto mt-10 grid max-w-4xl gap-4">
             {CAPACITACION.temario.map((t, i) => (
-              <li key={t.titulo} className="flex gap-5 rounded-tarjeta bg-blanco p-5 shadow-tarjeta sm:p-6">
+              <li key={t.titulo} className="flex gap-5 rounded-tarjeta bg-blanco p-5 borde-fino sm:p-6">
                 <span className="fondo-lanzamiento flex size-12 shrink-0 items-center justify-center rounded-full text-lg font-bold text-noche">
                   {i + 1}
                 </span>

@@ -42,6 +42,26 @@ npm run build   # deja el sitio estático en out/
   preguntas frecuentes son `<details>`. Sólo el formulario de contacto es
   componente de cliente.
 
+## Imágenes
+
+- `public/logo-kios-blanco.svg`: el logo original. En la web va inline
+  (`components/logo.tsx`) en `currentColor`: blanco en la barra, marino en el pie.
+- `public/robots/`: fotos de los robots (del fabricante de los kits), con el
+  fondo blanco pasado a sombra para que sirvan sobre cualquier color. Se ven
+  mejor sobre fondos claros.
+- `public/app/`: capturas de la app, sacadas de las pantallas de muestra del
+  repo `kios` (`/muestras/leccion`, `/muestras/armado`, `/muestras/simulador`,
+  que andan sin cuenta en desarrollo). Cuando la app cambie, se vuelven a sacar.
+
+## Movimiento
+
+Sigue la guía de diseño de Emil Kowalski: curvas propias
+(`--ease-salida`), todo lo que se aprieta se achica a 0,97 en 160 ms
+(`apretable`), las tarjetas se levantan sólo donde hay mouse (`levitar`), las
+secciones aparecen una vez al scrollear (`.aparecer`, sólo con JavaScript) y
+nada se mueve con «menos movimiento». La vitrina de la app pasa sola mientras
+se ve y se queda quieta al primer toque.
+
 ## Lo provisorio (todo en un solo archivo)
 
 Precios, forma de compra, datos de contacto, videos y la dirección de la app

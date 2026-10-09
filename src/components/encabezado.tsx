@@ -23,14 +23,14 @@ export function Encabezado() {
         aria-label="Principal"
         className="flex items-center gap-4 rounded-panel bg-noche/95 px-4 py-2.5 text-blanco shadow-tarjeta backdrop-blur"
       >
-        <Link href="/" className="flex items-center gap-2 rounded-boton py-1" aria-label="KIOS, inicio">
-          <Logo />
+        <Link href="/" className="apretable flex items-center rounded-boton px-1 py-1.5" aria-label="KIOS, inicio">
+          <Logo className="h-7" />
         </Link>
 
         <ul className="ml-4 hidden flex-1 items-center gap-1 lg:flex">
           {SECCIONES.map((s) => (
             <li key={s.href}>
-              <Link href={s.href} className="rounded-boton px-2.5 py-2 text-base hover:bg-white/10">
+              <Link href={s.href} className="apretable rounded-boton px-2.5 py-2 text-[15px] text-white/85 hover:bg-white/10 hover:text-white">
                 {s.texto}
               </Link>
             </li>
@@ -38,10 +38,10 @@ export function Encabezado() {
         </ul>
 
         <div className="ml-auto hidden items-center gap-2 lg:flex">
-          <a href={URL_APP} className="rounded-boton border border-blanco px-3 py-2 hover:bg-white/10">
+          <a href={URL_APP} className="apretable rounded-boton border border-white/50 px-3 py-2 hover:bg-white/10">
             Entrar
           </a>
-          <Link href="/contacto/" className="fondo-lanzamiento rounded-boton px-4 py-2 font-medium text-noche">
+          <Link href="/contacto/" className="fondo-lanzamiento apretable rounded-boton px-4 py-2 font-medium text-noche">
             Contacto
           </Link>
         </div>

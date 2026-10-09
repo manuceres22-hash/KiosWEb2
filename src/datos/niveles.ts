@@ -106,6 +106,8 @@ export type KitInfo = {
   trae: string[];
   formas: string[];
   estado: "disponible" | "pausa" | "produccion";
+  /** Foto del kit en `public/robots/`. Sin foto, la tarjeta muestra un lugar vacío. */
+  foto?: { src: string; ancho: number; alto: number; alt: string };
 };
 
 export const KITS: KitInfo[] = [
@@ -117,6 +119,7 @@ export const KITS: KitInfo[] = [
     trae: ["Robot armado de fábrica", "Sensores para descubrir"],
     formas: ["Robot listo para jugar"],
     estado: "pausa",
+    foto: { src: "/robots/weeebot-mini.webp", ancho: 644, alto: 432, alt: "El WeeeBot Mini, un robot con forma de auto" },
   },
   {
     id: "weeebot-3en1",
@@ -142,6 +145,7 @@ export const KITS: KitInfo[] = [
     ],
     formas: ["El tanque", "El lanzador de pelotas", "El brazo robótico", "El tanque con brazo"],
     estado: "disponible",
+    foto: { src: "/robots/robotstorm-12-en-1.webp", ancho: 594, alto: 560, alt: "Los doce robots que se arman con el kit 12-in-1 RobotStorm" },
   },
   {
     id: "rover-lunar",
@@ -162,3 +166,10 @@ export const ANIO = {
   comodinesPorCuatrimestre: 2,
   lugares: 64,
 };
+
+/** Algunos de los robots que se arman con el RobotStorm, con su foto. */
+export const ARMADOS_ROBOTSTORM = [
+  { nombre: "El lanzador de pelotas", nivel: "Builder", src: "/robots/lanzador.webp", ancho: 584, alto: 787 },
+  { nombre: "El tanque con brazo", nivel: "Maker Pro", src: "/robots/tanque-brazo.webp", ancho: 454, alto: 473 },
+  { nombre: "Sensor ultrasónico y placa", nivel: "Todos los armados", src: "/robots/detalle-sensor.webp", ancho: 396, alto: 420 },
+];

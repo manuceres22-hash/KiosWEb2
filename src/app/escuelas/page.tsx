@@ -46,7 +46,7 @@ export default function Escuelas() {
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PAQUETE.map((p) => (
               <li key={p.titulo}>
-                <Link href={p.href} className="block h-full rounded-tarjeta bg-blanco p-6 shadow-tarjeta transition-transform hover:-translate-y-1">
+                <Link href={p.href} className="block h-full rounded-tarjeta bg-blanco p-6 borde-fino levitar">
                   <h3 className="text-xl font-bold">{p.titulo}</h3>
                   <p className="mt-2 leading-relaxed">{p.texto}</p>
                   <p className="mt-3 font-medium text-naranja-texto">Conocé más →</p>

@@ -28,7 +28,7 @@ export default function Planes() {
             <li
               key={p.id}
               className={`relative flex flex-col rounded-tarjeta p-6 sm:p-8 ${
-                p.destacado ? "estrellas bg-noche text-blanco shadow-tarjeta lg:-my-4 lg:py-12" : "bg-blanco shadow-tarjeta"
+                p.destacado ? "estrellas bg-noche text-blanco borde-fino lg:-my-4 lg:py-12" : "bg-blanco borde-fino"
               }`}
             >
               {p.destacado && (
@@ -52,7 +52,7 @@ export default function Planes() {
               </ul>
               <Link
                 href={`/contacto/?motivo=${p.id}`}
-                className={`mt-8 rounded-boton px-5 py-3 text-center font-medium ${
+                className={`apretable mt-8 rounded-boton px-5 py-3 text-center font-medium ${
                   p.destacado ? "fondo-lanzamiento text-noche" : "border border-marino hover:bg-hielo"
                 }`}
               >
@@ -75,11 +75,11 @@ export default function Planes() {
               { t: "Capacitación docente", p: CAPACITACION.precio, x: "Según la modalidad y la cantidad de docentes.", href: "/capacitacion/", a: "Ver la capacitación" },
               { t: "Otras tecnologías", p: "A medida", x: "Impresión 3D, IoT, espacios maker y proyectos.", href: "/tecnologias/", a: "Ver las tecnologías" },
             ].map((c) => (
-              <li key={c.t} className="flex flex-col rounded-tarjeta bg-blanco p-6 shadow-tarjeta sm:p-8">
+              <li key={c.t} className="flex flex-col rounded-tarjeta bg-blanco p-6 borde-fino sm:p-8">
                 <h3 className="text-2xl font-bold">{c.t}</h3>
                 <p className="mt-4 text-[32px] font-bold leading-none">{c.p}</p>
                 <p className="mb-6 mt-2 text-grafito">{c.x}</p>
-                <Link href={c.href} className="mt-auto rounded-boton border border-marino px-5 py-3 text-center font-medium hover:bg-hielo">
+                <Link href={c.href} className="apretable mt-auto rounded-boton border border-marino px-5 py-3 text-center font-medium hover:bg-hielo">
                   {c.a}
                 </Link>
               </li>
@@ -93,7 +93,7 @@ export default function Planes() {
           <TituloSeccion id="titulo-compra" antetitulo="Cómo se compra" titulo="Sin vueltas" />
           <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {COMO_SE_COMPRA.map((p, i) => (
-              <li key={p.titulo} className="rounded-tarjeta bg-blanco p-6 shadow-tarjeta">
+              <li key={p.titulo} className="rounded-tarjeta bg-blanco p-6 borde-fino">
                 <span className="fondo-lanzamiento flex size-10 items-center justify-center rounded-full font-bold text-noche">{i + 1}</span>
                 <h3 className="mt-4 text-xl font-bold">{p.titulo}</h3>
                 <p className="mt-1 leading-relaxed text-grafito">{p.texto}</p>

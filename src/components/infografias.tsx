@@ -34,7 +34,7 @@ export function ClasePorDentro() {
     <ol className="relative grid gap-4 md:grid-cols-5 md:gap-3">
       <span aria-hidden="true" className="absolute left-0 right-0 top-9 hidden h-1 rounded-full fondo-cometa opacity-60 md:block" />
       {PASOS.map((p, i) => (
-        <li key={p.nombre} className="relative flex gap-4 rounded-tarjeta bg-blanco p-5 shadow-tarjeta md:flex-col md:gap-3">
+        <li key={p.nombre} className="relative flex gap-4 rounded-tarjeta bg-blanco p-5 borde-fino md:flex-col md:gap-3">
           <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-noche text-blanco">
             <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
               <path d={p.icono} fill="none" stroke="#ffa84a" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
@@ -63,7 +63,7 @@ export function UnAnio() {
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       {cuatrimestres.map((c) => (
-        <section key={c} aria-label={`Cuatrimestre ${c + 1}`} className="rounded-tarjeta bg-blanco p-5 shadow-tarjeta sm:p-6">
+        <section key={c} aria-label={`Cuatrimestre ${c + 1}`} className="rounded-tarjeta bg-blanco p-5 borde-fino sm:p-6">
           <h3 className="text-xl font-bold">Cuatrimestre {c + 1}</h3>
           <p className="text-grafito">{c === 0 ? "Arranca con el armado del primer robot." : "Arranca con el armado de otro robot."}</p>
           <div className="mt-4 grid gap-2">
@@ -118,7 +118,7 @@ export function Medallas() {
   return (
     <ul className="grid gap-4 sm:grid-cols-3">
       {medallas.map((m) => (
-        <li key={m.nombre} className="flex items-center gap-4 rounded-tarjeta bg-blanco p-5 shadow-tarjeta">
+        <li key={m.nombre} className="flex items-center gap-4 rounded-tarjeta bg-blanco p-5 borde-fino">
           <svg width="48" height="56" viewBox="0 0 48 56" aria-hidden="true">
             <path d="M14 0h8l4 18h-8zM34 0h-8l-4 18h8z" fill="#183d6d" />
             <circle cx="24" cy="36" r="18" fill={m.color} />

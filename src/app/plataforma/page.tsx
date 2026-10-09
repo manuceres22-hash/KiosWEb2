@@ -2,6 +2,8 @@
 import type { Metadata } from "next";
 import { NIVELES } from "@/datos/niveles";
 import { ClasePorDentro, Medallas, UnAnio } from "@/components/infografias";
+import { SeccionKio } from "@/components/seccion-kio";
+import { BloquesPython } from "@/components/bloques-python";
 import { URL_APP } from "@/datos/provisorio";
 import { CabeceraDePagina, BotonContorno, BotonLanzar, Contenedor, PanelInvitacion, Tarjeta, TituloSeccion } from "@/components/piezas";
 
@@ -72,7 +74,9 @@ export default function Plataforma() {
         </BotonContorno>
       </CabeceraDePagina>
 
-      <section className="mt-20" aria-labelledby="mascotas">
+      <SeccionKio conBotones={false} />
+
+      <section className="mt-28" aria-labelledby="mascotas">
         <Contenedor>
           <TituloSeccion
             id="mascotas"
@@ -81,13 +85,13 @@ export default function Plataforma() {
             bajada="Adentro de la plataforma, Kio acompaña a todos y cada nivel tiene su propia mascota."
           />
           <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            <li className="flex flex-col items-center rounded-tarjeta bg-blanco p-5 text-center shadow-tarjeta">
+            <li className="flex flex-col items-center rounded-tarjeta bg-blanco p-5 text-center borde-fino">
               <img src="/mascotas/kio.svg" alt="" width={150} height={185} className="w-20" />
               <p className="mt-3 text-lg font-bold">Kio</p>
               <p className="text-sm text-grafito">De todos</p>
             </li>
             {NIVELES.map((n) => (
-              <li key={n.id} className="flex flex-col items-center rounded-tarjeta bg-blanco p-5 text-center shadow-tarjeta">
+              <li key={n.id} className="flex flex-col items-center rounded-tarjeta bg-blanco p-5 text-center borde-fino">
                 <img src={n.imagen} alt="" width={150} height={185} className="w-20" />
                 <p className="mt-3 text-lg font-bold">{n.mascota}</p>
                 <p className="text-sm text-grafito">{n.nombre}</p>
@@ -116,6 +120,38 @@ export default function Plataforma() {
           <TituloSeccion id="clase" antetitulo="Infografía" titulo="Una clase por dentro" />
           <div className="mt-10">
             <ClasePorDentro />
+          </div>
+        </Contenedor>
+      </section>
+
+      <section className="mt-28" aria-labelledby="programa">
+        <Contenedor>
+          <div className="aparecer">
+            <TituloSeccion
+              id="programa"
+              antetitulo="Bloques y Python"
+              titulo="El mismo programa, de dos formas"
+              bajada="Cada bloque es una línea de Python de verdad. Se pasa de uno a otro sin perder nada: el que se anima a escribir código desde el primer día, puede."
+            />
+          </div>
+          <div className="aparecer mt-10">
+            <BloquesPython />
+          </div>
+        </Contenedor>
+      </section>
+
+      <section className="mt-28" aria-labelledby="armado">
+        <Contenedor className="grid items-center gap-10 lg:grid-cols-[1fr_1.4fr]">
+          <div className="aparecer">
+            <p className="font-medium text-naranja-texto">Armado en 3D</p>
+            <h2 id="armado" className="mt-2 text-[32px] font-bold leading-[1.1] sm:text-[45px]">Primero en la pantalla, después en la mesa</h2>
+            <p className="mt-4 text-lg leading-relaxed">
+              Cada pieza va a su lugar y cada tornillo, con su herramienta, en el mismo orden que el manual del kit.
+              Cuando el robot queda armado, pasa directo al simulador.
+            </p>
+          </div>
+          <div className="aparecer borde-fino overflow-hidden rounded-panel bg-blanco" style={{ ["--i" as string]: 1 }}>
+            <img src="/app/pc-armado.webp" alt="El armado en 3D del tanque, paso 1: la base" width={1440} height={900} loading="lazy" className="w-full" />
           </div>
         </Contenedor>
       </section>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
 import { Encabezado } from "@/components/encabezado";
 import { Pie } from "@/components/pie";
+import { Aparecer } from "@/components/aparecer";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -33,7 +34,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es-AR" className={rubik.variable}>
+    <html lang="es-AR" className={rubik.variable} suppressHydrationWarning>
+      <head>
+        {/* Antes de pintar: con JS, lo que aparece al scrollear arranca escondido. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="min-h-dvh">
         <a
           href="#contenido"
@@ -44,6 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Encabezado />
         <main id="contenido">{children}</main>
         <Pie />
+        <Aparecer />
       </body>
     </html>
   );

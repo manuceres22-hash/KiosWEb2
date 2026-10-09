@@ -22,7 +22,7 @@ export default function Niveles() {
           <article
             key={n.id}
             id={n.id}
-            className="grid scroll-mt-28 gap-6 rounded-tarjeta bg-blanco p-6 shadow-tarjeta sm:p-8 md:grid-cols-[auto_1fr_1fr] md:items-center"
+            className="grid scroll-mt-28 gap-6 rounded-tarjeta bg-blanco p-6 borde-fino sm:p-8 md:grid-cols-[auto_1fr_1fr] md:items-center"
           >
             <div className="flex items-center gap-4 md:flex-col">
               <span className="flex size-32 shrink-0 items-end justify-center rounded-full" style={{ background: `${n.color}33` }}>

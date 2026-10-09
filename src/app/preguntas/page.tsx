@@ -60,7 +60,7 @@ export default function Preguntas() {
       <Contenedor className="mt-16 max-w-3xl">
         <div className="grid gap-3">
           {PREGUNTAS.map((q) => (
-            <details key={q.p} className="group rounded-tarjeta bg-blanco shadow-tarjeta">
+            <details key={q.p} className="group rounded-tarjeta bg-blanco borde-fino">
               <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 text-lg font-bold [&::-webkit-details-marker]:hidden">
                 {q.p}
                 <span className="text-2xl text-naranja transition-transform group-open:rotate-45" aria-hidden="true">+</span>

@@ -4,7 +4,7 @@ import { PROVISORIO } from "@/datos/provisorio";
 /** El botón naranja: el único que dice «empezá». */
 export function BotonLanzar({ href, children }: { href: string; children: React.ReactNode }) {
   const clases =
-    "fondo-lanzamiento inline-flex min-h-12 items-center gap-2 rounded-boton px-5 py-3 text-lg font-medium text-noche transition-transform hover:-translate-y-0.5";
+    "fondo-lanzamiento apretable inline-flex min-h-12 items-center gap-2 rounded-boton px-5 py-3 text-lg font-medium text-noche shadow-[0_8px_24px_-10px_rgba(255,122,83,0.7)]";
   const flecha = (
     <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
       <path d="M3 9h11M10 4l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -36,7 +36,7 @@ export function BotonContorno({
   children: React.ReactNode;
   oscuro?: boolean;
 }) {
-  const clases = `inline-flex min-h-12 items-center rounded-boton border px-5 py-3 text-lg ${
+  const clases = `apretable inline-flex min-h-12 items-center rounded-boton border px-5 py-3 text-lg ${
     oscuro ? "border-blanco text-blanco hover:bg-white/10" : "border-marino text-marino hover:bg-blanco"
   }`;
   return href.startsWith("http") ? (
@@ -63,8 +63,8 @@ export function TituloSeccion({
 }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      {antetitulo && <p className="font-medium uppercase tracking-wider text-naranja-texto">{antetitulo}</p>}
-      <h2 id={id} className="mt-2 text-3xl font-bold leading-tight sm:text-[45px] sm:leading-[1.2]">
+      {antetitulo && <p className="font-medium text-naranja-texto">{antetitulo}</p>}
+      <h2 id={id} className="mt-2 text-[32px] font-bold leading-[1.1] sm:text-[45px]">
         {titulo}
       </h2>
       {bajada && <p className="mt-4 text-lg leading-relaxed sm:text-xl">{bajada}</p>}
@@ -78,14 +78,17 @@ export function CabeceraDePagina({
   bajada,
   imagen,
   icono,
+  foto,
   children,
 }: {
   titulo: string;
   bajada: string;
   /** Una mascota: sólo en las páginas de la plataforma, que es donde viven. */
   imagen?: string;
-  /** El resto de las páginas lleva un ícono en órbita. */
+  /** El resto de las páginas lleva un ícono en órbita… */
   icono?: string;
+  /** …o la foto de un robot, sobre un disco claro. */
+  foto?: { src: string; ancho: number; alto: number };
   children?: React.ReactNode;
 }) {
   return (
@@ -97,7 +100,15 @@ export function CabeceraDePagina({
             <p className="mt-5 text-lg leading-relaxed text-senal sm:text-xl">{bajada}</p>
             {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
           </div>
-          {icono && !imagen && (
+          {foto && (
+            <div className="relative mx-auto hidden size-60 items-center justify-center md:flex lg:size-72">
+              <span aria-hidden="true" className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_40%,#f4faff,#cfe6fb)]" />
+              <span aria-hidden="true" className="absolute -inset-5 rounded-full border border-dashed border-senal/30" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={foto.src} alt="" width={foto.ancho} height={foto.alto} className="relative max-h-[78%] w-auto max-w-[80%] object-contain" />
+            </div>
+          )}
+          {icono && !imagen && !foto && (
             <svg viewBox="0 0 200 200" className="mx-auto hidden w-44 md:block lg:w-52" aria-hidden="true">
               <circle cx="100" cy="100" r="92" fill="none" stroke="#8bb3da" strokeOpacity=".25" strokeDasharray="4 8" />
               <circle cx="100" cy="100" r="62" fill="#022e57" stroke="#8bb3da" strokeOpacity=".3" />
@@ -121,7 +132,7 @@ export function CabeceraDePagina({
 
 /** La tarjeta blanca de las grillas. */
 export function Tarjeta({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`rounded-tarjeta bg-blanco p-6 shadow-tarjeta sm:p-8 ${className}`}>{children}</div>;
+  return <div className={`borde-fino rounded-tarjeta bg-blanco p-6 sm:p-8 ${className}`}>{children}</div>;
 }
 
 /** Al lado de todo número que todavía no está decidido. */

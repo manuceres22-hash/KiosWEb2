@@ -75,7 +75,7 @@ export function FormularioContacto() {
         <textarea name="mensaje" rows={5} required className={campo} placeholder="Por ejemplo: somos una escuela con tres cursos de 5.º grado y queremos probarlo." />
       </label>
       <div className="flex flex-wrap items-center gap-4">
-        <button type="submit" className="fondo-lanzamiento min-h-12 rounded-boton px-6 py-3 text-lg font-medium text-noche">
+        <button type="submit" className="fondo-lanzamiento apretable min-h-12 rounded-boton px-6 py-3 text-lg font-medium text-noche">
           Enviar
         </button>
         <p className="text-sm text-grafito" role="status">
