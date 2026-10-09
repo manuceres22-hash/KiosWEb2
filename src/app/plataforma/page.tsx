@@ -2,11 +2,12 @@
 import type { Metadata } from "next";
 import { NIVELES } from "@/datos/niveles";
 import { ClasePorDentro, Medallas, UnAnio } from "@/components/infografias";
-import { CabeceraDePagina, BotonLanzar, Contenedor, PanelInvitacion, Tarjeta, TituloSeccion } from "@/components/piezas";
+import { URL_APP } from "@/datos/provisorio";
+import { CabeceraDePagina, BotonContorno, BotonLanzar, Contenedor, PanelInvitacion, Tarjeta, TituloSeccion } from "@/components/piezas";
 
 export const metadata: Metadata = {
-  title: "El universo KIOS",
-  description: "Cómo es KIOS por dentro: niveles, mascotas, clases, misiones, retos, medallas, la isla del simulador y la IA.",
+  title: "Plataforma KIOS",
+  description: "La plataforma KIOS para aprender a programar robots: niveles, mascotas, clases, misiones, retos, medallas, el simulador y la IA.",
 };
 
 const PIEZAS = [
@@ -54,15 +55,21 @@ const PIEZAS = [
   },
 ];
 
-export default function Universo() {
+export default function Plataforma() {
   return (
     <>
       <CabeceraDePagina
-        titulo="El universo KIOS"
-        bajada="Cinco niveles, cinco mascotas, una isla de noche y robots que salen de la pantalla. Así funciona todo por dentro."
+        titulo="Plataforma KIOS"
+        bajada="La app para aprender a programar los robots de KIOS: clases con video, simulador, bloques y Python, retos, medallas y un panel para cada docente. Cinco niveles y cinco mascotas que acompañan a los chicos."
         imagen="/mascotas/kio.svg"
       >
         <BotonLanzar href="/contacto/">Pedí una demo</BotonLanzar>
+        <BotonContorno href="/niveles/" oscuro>
+          Ver los niveles
+        </BotonContorno>
+        <BotonContorno href={URL_APP} oscuro>
+          Entrar
+        </BotonContorno>
       </CabeceraDePagina>
 
       <section className="mt-20" aria-labelledby="mascotas">
@@ -71,7 +78,7 @@ export default function Universo() {
             id="mascotas"
             antetitulo="Las mascotas"
             titulo="Kio y la banda"
-            bajada="Kio acompaña a todos. Cada nivel tiene además su propia mascota."
+            bajada="Adentro de la plataforma, Kio acompaña a todos y cada nivel tiene su propia mascota."
           />
           <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             <li className="flex flex-col items-center rounded-tarjeta bg-blanco p-5 text-center shadow-tarjeta">
@@ -143,7 +150,7 @@ export default function Universo() {
         </Contenedor>
       </section>
 
-      <PanelInvitacion />
+      <PanelInvitacion titulo="¿La probamos en tu escuela?" texto="Te mostramos la plataforma con una escuela de prueba: el armado, el simulador, una clase entera y el panel docente." />
     </>
   );
 }

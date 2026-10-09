@@ -14,7 +14,7 @@ export default function Niveles() {
     <>
       <CabeceraDePagina
         titulo="Cinco niveles, un camino"
-        bajada="Del primer robot que se toca sin leer al código como se usa en la industria. Cada nivel es un año escolar."
+        bajada="La plataforma KIOS tiene cinco niveles: del primer robot que se toca sin leer al código como se usa en la industria. Cada nivel es un año escolar, con su kit y su mascota."
         imagen="/mascotas/bill.svg"
       />
       <Contenedor className="mt-16 grid gap-6">

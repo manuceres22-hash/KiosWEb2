@@ -13,8 +13,8 @@ export default function Videos() {
     <>
       <CabeceraDePagina
         titulo="Videoteca"
-        bajada="KIOS en movimiento: el armado, el simulador, una clase entera y cómo se usa en el aula."
-        imagen="/mascotas/robi.svg"
+        bajada="KIOS en movimiento: los robots, la plataforma, la capacitación docente y cómo se usa todo en el aula."
+        icono="M5 5h10v14H5zM15 9l5-3v12l-5-3"
       />
       <Contenedor className="mt-16">
         <ul className="grid gap-8 md:grid-cols-2">

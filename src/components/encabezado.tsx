@@ -3,12 +3,12 @@ import { URL_APP } from "@/datos/provisorio";
 import { Logo } from "./logo";
 
 export const SECCIONES = [
-  { href: "/universo/", texto: "El universo" },
-  { href: "/niveles/", texto: "Niveles" },
   { href: "/robots/", texto: "Robots" },
+  { href: "/plataforma/", texto: "Plataforma" },
+  { href: "/capacitacion/", texto: "Capacitación" },
+  { href: "/tecnologias/", texto: "Tecnologías" },
   { href: "/escuelas/", texto: "Escuelas" },
-  { href: "/planes/", texto: "Planes" },
-  { href: "/videos/", texto: "Videos" },
+  { href: "/empresa/", texto: "Empresa" },
 ];
 
 /**

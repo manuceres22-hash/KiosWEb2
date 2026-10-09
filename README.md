@@ -1,8 +1,20 @@
 # KiosWEb2
 
-La web institucional de KIOS: **kios.com.ar**. Cuenta qué es KIOS, muestra los
-niveles, los robots y los kits, los planes de suscripción, los videos y el
-contacto.
+La web institucional de KIOS: **kios.com.ar**. KIOS es una empresa de
+tecnología educativa, y la web la presenta con sus cuatro líneas
+(`src/datos/soluciones.ts`):
+
+- **Robots y kits** (`/robots/`)
+- **Plataforma KIOS**, la app (`/plataforma/` y `/niveles/`)
+- **Capacitación docente** (`/capacitacion/`)
+- **Otras tecnologías** (`/tecnologias/`)
+
+Además: escuelas y gobiernos, la empresa, precios, videos, preguntas frecuentes
+y contacto.
+
+**Las mascotas son de la app**: aparecen sólo en las páginas de la plataforma
+(`/plataforma/` y `/niveles/`). El resto del sitio usa la ilustración de
+`components/escena.tsx` y los íconos de `CabeceraDePagina`.
 
 Es un proyecto **aparte de la app** (el repo `kios`): no comparte código, ni
 base de datos, ni deploy. Si se rompe algo acá, la app de las escuelas sigue
@@ -41,6 +53,9 @@ cosa, se cambia ahí y nada más:
 - `PRECIOS_KITS` y `PLANES`: precios en pesos.
 - `CONTACTO`: mails, WhatsApp (vacío = no se muestra), horario y redes.
 - `COMO_SE_COMPRA`: los pasos.
+- `EMPRESA`: misión, qué hacemos y valores (texto de referencia).
+- `CAPACITACION`: modalidades, temario y precio.
+- `TECNOLOGIAS`: las otras tecnologías y servicios.
 - `VIDEOS`: con `url` vacía se ve «Video en preparación»; con una URL de
   YouTube `/embed/…`, el video.
 - `URL_APP`: adónde lleva «Entrar».

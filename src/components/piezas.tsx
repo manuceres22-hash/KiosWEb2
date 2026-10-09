@@ -77,11 +77,15 @@ export function CabeceraDePagina({
   titulo,
   bajada,
   imagen,
+  icono,
   children,
 }: {
   titulo: string;
   bajada: string;
+  /** Una mascota: sólo en las páginas de la plataforma, que es donde viven. */
   imagen?: string;
+  /** El resto de las páginas lleva un ícono en órbita. */
+  icono?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -93,6 +97,18 @@ export function CabeceraDePagina({
             <p className="mt-5 text-lg leading-relaxed text-senal sm:text-xl">{bajada}</p>
             {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
           </div>
+          {icono && !imagen && (
+            <svg viewBox="0 0 200 200" className="mx-auto hidden w-44 md:block lg:w-52" aria-hidden="true">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#8bb3da" strokeOpacity=".25" strokeDasharray="4 8" />
+              <circle cx="100" cy="100" r="62" fill="#022e57" stroke="#8bb3da" strokeOpacity=".3" />
+              <g transform="translate(64 64) scale(3)">
+                <path d={icono} fill="none" stroke="#ffa84a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </g>
+              <circle cx="22" cy="60" r="5" fill="#fd8d32" />
+              <circle cx="180" cy="150" r="6" fill="#ff7a53" />
+              <circle cx="166" cy="30" r="2.5" fill="#fff" />
+            </svg>
+          )}
           {imagen && (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={imagen} alt="" width={150} height={185} className="flotar mx-auto hidden w-40 md:block lg:w-48" />
@@ -121,11 +137,13 @@ export function AvisoProvisorio({ children = "Valores de referencia, a confirmar
 
 /** El cierre de casi todas las páginas: un panel azul con el botón naranja. */
 export function PanelInvitacion({
-  titulo = "¿Lo probamos en tu casa o en tu escuela?",
-  texto = "Escribinos y te mostramos KIOS funcionando: el armado, el simulador y una clase entera.",
+  titulo = "¿Hablamos de tu proyecto?",
+  texto = "Escribinos y te mostramos KIOS funcionando: los robots, la plataforma y cómo es una capacitación.",
+  accion = "Pedí una demo",
 }: {
   titulo?: string;
   texto?: string;
+  accion?: string;
 }) {
   return (
     <Contenedor className="mt-24">
@@ -135,7 +153,7 @@ export function PanelInvitacion({
             <h2 className="text-3xl font-bold leading-tight sm:text-[45px] sm:leading-[1.3]">{titulo}</h2>
             <p className="mt-4 max-w-xl text-lg text-senal">{texto}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <BotonLanzar href="/contacto/">Pedí una demo</BotonLanzar>
+              <BotonLanzar href="/contacto/">{accion}</BotonLanzar>
               <span className="text-sm text-senal">Sin compromiso. Te respondemos en el día.</span>
             </div>
           </div>

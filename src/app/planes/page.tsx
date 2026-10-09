@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { COMO_SE_COMPRA, PLANES } from "@/datos/provisorio";
+import { CAPACITACION, COMO_SE_COMPRA, PLANES, PRECIOS_KITS, formatearPrecio } from "@/datos/provisorio";
 import { AvisoProvisorio, CabeceraDePagina, Contenedor, PanelInvitacion, TituloSeccion } from "@/components/piezas";
 
 export const metadata: Metadata = {
-  title: "Planes",
-  description: "Planes de suscripción de KIOS para familias, escuelas y ministerios.",
+  title: "Precios",
+  description: "Precios de KIOS: suscripción a la plataforma para familias, escuelas y ministerios, robots y kits, capacitación docente y otras tecnologías.",
 };
 
 export default function Planes() {
   return (
     <>
       <CabeceraDePagina
-        titulo="Un plan para cada lugar donde se aprende"
-        bajada="En casa, en un curso o en toda una provincia. El kit se compra una vez; la suscripción es la app con todas las clases."
-        imagen="/mascotas/ter.svg"
+        titulo="Precios"
+        bajada="Los robots se compran una vez; la plataforma es una suscripción; la capacitación y los proyectos se arman a medida. Abajo, cada cosa por separado."
+        icono="M4 7h16v12H4zM4 11h16M8 15h3"
       />
 
       <Contenedor className="mt-10 flex justify-center">
@@ -22,6 +22,7 @@ export default function Planes() {
       </Contenedor>
 
       <Contenedor className="mt-12">
+        <h2 className="mb-10 text-center text-3xl font-bold sm:text-[45px] sm:leading-[1.2]">Suscripción a la plataforma</h2>
         <ul className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
           {PLANES.map((p) => (
             <li
@@ -65,6 +66,28 @@ export default function Planes() {
         </p>
       </Contenedor>
 
+      <section className="mt-24" aria-labelledby="ademas">
+        <Contenedor>
+          <h2 id="ademas" className="text-center text-3xl font-bold sm:text-[45px] sm:leading-[1.2]">Robots, capacitación y más</h2>
+          <ul className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              { t: "Robots y kits", p: `Desde ${formatearPrecio(Math.min(...Object.values(PRECIOS_KITS).filter((x): x is number => x !== null)))}`, x: "Pago único por kit.", href: "/robots/", a: "Ver los kits" },
+              { t: "Capacitación docente", p: CAPACITACION.precio, x: "Según la modalidad y la cantidad de docentes.", href: "/capacitacion/", a: "Ver la capacitación" },
+              { t: "Otras tecnologías", p: "A medida", x: "Impresión 3D, IoT, espacios maker y proyectos.", href: "/tecnologias/", a: "Ver las tecnologías" },
+            ].map((c) => (
+              <li key={c.t} className="flex flex-col rounded-tarjeta bg-blanco p-6 shadow-tarjeta sm:p-8">
+                <h3 className="text-2xl font-bold">{c.t}</h3>
+                <p className="mt-4 text-[32px] font-bold leading-none">{c.p}</p>
+                <p className="mb-6 mt-2 text-grafito">{c.x}</p>
+                <Link href={c.href} className="mt-auto rounded-boton border border-marino px-5 py-3 text-center font-medium hover:bg-hielo">
+                  {c.a}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Contenedor>
+      </section>
+
       <section id="como-se-compra" className="mt-24 scroll-mt-28" aria-labelledby="titulo-compra">
         <Contenedor>
           <TituloSeccion id="titulo-compra" antetitulo="Cómo se compra" titulo="Sin vueltas" />
@@ -80,7 +103,7 @@ export default function Planes() {
         </Contenedor>
       </section>
 
-      <PanelInvitacion titulo="¿Dudas con los planes?" texto="Te ayudamos a elegir y te armamos una propuesta para tu escuela o tu distrito." />
+      <PanelInvitacion titulo="¿Querés un presupuesto completo?" texto="Robots, plataforma y capacitación en una sola propuesta para tu escuela o tu distrito." accion="Pedí un presupuesto" />
     </>
   );
 }

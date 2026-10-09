@@ -10,6 +10,8 @@ const MOTIVOS = [
   { id: "escuela", texto: "KIOS en mi escuela" },
   { id: "ministerio", texto: "Ministerio o distrito" },
   { id: "kit", texto: "Comprar un kit" },
+  { id: "capacitacion", texto: "Capacitación docente" },
+  { id: "tecnologias", texto: "Otras tecnologías o un proyecto a medida" },
   { id: "avisame", texto: "Avisame cuando haya un kit nuevo" },
   { id: "otro", texto: "Otra consulta" },
 ];
@@ -29,7 +31,7 @@ export function FormularioContacto() {
     e.preventDefault();
     const datos = new FormData(e.currentTarget);
     const motivo = MOTIVOS.find((m) => m.id === datos.get("motivo"))?.texto ?? "Consulta";
-    const destino = ["escuela", "ministerio"].includes(String(datos.get("motivo"))) ? CONTACTO.emailEscuelas : CONTACTO.email;
+    const destino = ["escuela", "ministerio", "capacitacion", "tecnologias"].includes(String(datos.get("motivo"))) ? CONTACTO.emailEscuelas : CONTACTO.email;
     const encabezado = [
       `Nombre: ${datos.get("nombre")}`,
       `Mail: ${datos.get("email")}`,

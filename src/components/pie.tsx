@@ -10,7 +10,7 @@ export function Pie() {
         <div className="text-marino">
           <Logo grande />
           <p className="mt-4 max-w-xs text-grafito">
-            Aprendé a programar armando robots de verdad. Hecho en Argentina, para familias y escuelas.
+            Tecnología educativa para aprender haciendo: robots, plataforma, capacitación docente y más.
           </p>
         </div>
         <div>
@@ -29,10 +29,16 @@ export function Pie() {
           <h2 className="font-bold">Para empezar</h2>
           <ul className="mt-3 grid gap-2 text-grafito">
             <li>
-              <a href={URL_APP} className="hover:text-marino hover:underline">Entrar a KIOS</a>
+              <a href={URL_APP} className="hover:text-marino hover:underline">Entrar a la plataforma</a>
             </li>
             <li>
               <Link href="/contacto/" className="hover:text-marino hover:underline">Pedí una demo</Link>
+            </li>
+            <li>
+              <Link href="/planes/" className="hover:text-marino hover:underline">Precios</Link>
+            </li>
+            <li>
+              <Link href="/videos/" className="hover:text-marino hover:underline">Videos</Link>
             </li>
             <li>
               <Link href="/planes/#como-se-compra" className="hover:text-marino hover:underline">Cómo se compra</Link>

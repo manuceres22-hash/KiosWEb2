@@ -8,6 +8,18 @@ export const metadata: Metadata = {
 
 const PREGUNTAS = [
   {
+    p: "¿Qué es KIOS?",
+    r: "Una empresa de tecnología educativa. Vendemos robots y kits, desarrollamos la plataforma KIOS para aprender a programarlos, capacitamos docentes y trabajamos con otras tecnologías, como impresión 3D, IoT y visión artificial.",
+  },
+  {
+    p: "¿Tengo que comprar todo junto?",
+    r: "No. Robots, plataforma y capacitación funcionan juntos o por separado. Te armamos la combinación que le sirve a tu escuela.",
+  },
+  {
+    p: "¿Los docentes necesitan saber robótica?",
+    r: "No. La capacitación docente arranca desde cero, con los mismos robots y las mismas clases que después van a dar.",
+  },
+  {
     p: "¿Hace falta saber programar para empezar?",
     r: "No. Se empieza con bloques y, en los niveles más chicos, sin necesidad de leer. Python aparece cuando el alumno está listo, y siempre es el mismo programa que los bloques.",
   },
@@ -16,8 +28,8 @@ const PREGUNTAS = [
     r: "El nivel no sale de la edad: depende de lo que ya sabe. Escribinos contándonos y te recomendamos por dónde empezar.",
   },
   {
-    p: "¿Se puede usar KIOS sin el robot?",
-    r: "Sí: todas las misiones se juegan en el simulador, que anda como el robot real. Con el kit, además, lo programado se prueba en la mesa.",
+    p: "¿Se puede usar la plataforma sin el robot?",
+    r: "Sí: todas las misiones de la plataforma se juegan en el simulador, que anda como el robot real. Con el kit, además, lo programado se prueba en la mesa.",
   },
   {
     p: "¿Qué dispositivo necesito?",
@@ -44,7 +56,7 @@ const PREGUNTAS = [
 export default function Preguntas() {
   return (
     <>
-      <CabeceraDePagina titulo="Preguntas frecuentes" bajada="Lo que más nos preguntan familias, docentes y directivos." imagen="/mascotas/kio.svg" />
+      <CabeceraDePagina titulo="Preguntas frecuentes" bajada="Lo que más nos preguntan familias, docentes y directivos." icono="M9 9a3 3 0 115 2c-1 1-2 1.5-2 3M12 18h.01" />
       <Contenedor className="mt-16 max-w-3xl">
         <div className="grid gap-3">
           {PREGUNTAS.map((q) => (

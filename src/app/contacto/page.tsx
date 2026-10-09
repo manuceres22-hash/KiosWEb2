@@ -14,8 +14,8 @@ export default function Contacto() {
     <>
       <CabeceraDePagina
         titulo="Hablemos"
-        bajada="Pedí una demo, consultá por un kit o armemos la propuesta para tu escuela. Te respondemos en el día."
-        imagen="/mascotas/kio.svg"
+        bajada="Pedí una demo, consultá por un kit o una capacitación, o armemos la propuesta para tu escuela o tu provincia. Te respondemos en el día."
+        icono="M3 6h18v12H3zM3 7l9 6 9-6"
       />
       <Contenedor className="mt-16 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
         <Tarjeta>
@@ -32,7 +32,7 @@ export default function Contacto() {
                 <a href={`mailto:${CONTACTO.email}`} className="underline">{CONTACTO.email}</a>
               </li>
               <li>
-                <span className="block text-sm text-grafito">Escuelas y ministerios</span>
+                <span className="block text-sm text-grafito">Escuelas, gobiernos e instituciones</span>
                 <a href={`mailto:${CONTACTO.emailEscuelas}`} className="underline">{CONTACTO.emailEscuelas}</a>
               </li>
               {CONTACTO.whatsapp && (

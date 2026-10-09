@@ -14,11 +14,11 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kios.com.ar"),
   title: {
-    default: "KIOS · Aprendé a programar armando robots",
+    default: "KIOS · Tecnología para aprender haciendo",
     template: "%s · KIOS",
   },
   description:
-    "KIOS es la plataforma para aprender programación y robótica armando robots de verdad: clases con video, simulador, bloques y Python, para familias y escuelas.",
+    "KIOS es una empresa de tecnología educativa: robots y kits, la plataforma KIOS para aprender a programar, capacitación docente y otras tecnologías para escuelas, gobiernos y familias.",
   openGraph: {
     type: "website",
     locale: "es_AR",

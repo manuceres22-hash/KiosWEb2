@@ -20,8 +20,8 @@ export default function Robots() {
     <>
       <CabeceraDePagina
         titulo="Robots de verdad, para armar"
-        bajada="Cada nivel tiene su kit. Se arma primero en 3D y después en la mesa, y se programa con la misma app."
-        imagen="/mascotas/mako.svg"
+        bajada="Cada nivel tiene su kit. Se arma primero en 3D y después en la mesa, y se programa con la plataforma KIOS."
+        icono="M5 9h14v9a2 2 0 01-2 2H7a2 2 0 01-2-2zM9 13h.01M15 13h.01M12 9V5M12 4h.01M3 13h2M19 13h2"
       >
         <BotonLanzar href="#como-se-compra">Cómo se compra</BotonLanzar>
       </CabeceraDePagina>

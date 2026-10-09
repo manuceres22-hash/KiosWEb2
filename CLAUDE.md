@@ -5,6 +5,10 @@ La web institucional de KIOS (kios.com.ar). Leé `README.md` primero.
 - **Respondé siempre en español rioplatense, con voseo**, y escribí así todo
   texto que vea el usuario: "probá", "armá", "escribinos". Nada de "tú".
 - **El nombre es "KIOS"** y no se toca.
+- **KIOS es una empresa, no sólo la app.** Tiene cuatro líneas: robots y kits,
+  la plataforma (la app), capacitación docente y otras tecnologías. La portada
+  y el menú hablan de la empresa; la app es una de las líneas.
+- **Las mascotas son de la app**: sólo en `/plataforma/` y `/niveles/`.
 - **Este repo no toca la app.** No importes código del repo `kios`; si hace
   falta un dato de la app, se copia a `src/datos/` con un comentario de dónde sale.
 - **Lo que no está decidido vive sólo en `src/datos/provisorio.ts`.** No
