@@ -27,3 +27,8 @@ La web institucional de KIOS (kios.com.ar). Leé `README.md` primero.
   rutas que necesiten servidor. Antes de usar una API de Next, mirá
   `node_modules/next/dist/docs/`.
 - Corré `npm run verify` y `npm run build` antes de cada commit.
+- **CodeGraph** (`@colbymchenry/codegraph`, fijado en 1.6.2 y sin telemetría)
+  indexa el código y lo ofrece como servidor MCP (`codegraph_explore`, en
+  `.mcp.json`). El índice vive en `.codegraph/`, no se commitea y lo arma o
+  pone al día `.claude/hooks/codegraph.sh` al empezar cada sesión. Para subir
+  de versión, cambiala en los dos archivos.

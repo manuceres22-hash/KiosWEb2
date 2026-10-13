@@ -1,0 +1,19 @@
+{
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": ["mcp__codegraph__*"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/codegraph.sh",
+            "timeout": 180
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -6,3 +6,6 @@
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# índice local de CodeGraph (lo arma .claude/hooks/codegraph.sh)
+.codegraph/
